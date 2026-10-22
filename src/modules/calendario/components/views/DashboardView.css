@@ -1,0 +1,47 @@
+/* ========== DASHBOARD VIEW ========== */
+.dashboard-view {
+  padding: 0;
+}
+
+/* ========== GAUGES TRIPLE ========== */
+.efectividad-triple {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+/* ========== TENDENCIAS + RESUMEN (3 columnas) ========== */
+.tendencias-resumen-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* ========== TOP 3 FALLAS (2 columnas alineadas con las de arriba) ========== */
+.fallas-top3-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 0;
+  align-items: stretch;
+}
+
+.fallas-top3-row > * {
+  grid-column: span 1;
+  min-height: 100%;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .efectividad-triple {
+    grid-template-columns: 1fr;
+  }
+  .tendencias-resumen-row {
+    grid-template-columns: 1fr;
+  }
+  .fallas-top3-row {
+    grid-template-columns: 1fr;
+  }
+}

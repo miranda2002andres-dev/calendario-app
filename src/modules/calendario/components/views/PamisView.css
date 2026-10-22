@@ -1,0 +1,251 @@
+/* ========== PAMIS VIEW - NEGRO + NARANJA ========== */
+.pamis-view .pamis-hero {
+  background: #0a0a0a;
+  border: 1px solid #ff6600;
+  border-radius: 24px;
+  padding: 30px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.25);
+}
+
+.pamis-view .hero-kpi { flex: 1; }
+
+.pamis-view .hero-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.pamis-view .hero-value {
+  font-size: 56px;
+  font-weight: bold;
+  display: block;
+  line-height: 1;
+  color: #ff6600;
+}
+
+.pamis-view .hero-status {
+  font-size: 11px;
+  opacity: 0.8;
+  display: block;
+  margin-top: 8px;
+}
+
+.pamis-view .hero-divider {
+  width: 1px;
+  height: 60px;
+  background: rgba(255, 102, 0, 0.4);
+}
+
+/* Grid de 3 tarjetas */
+.pamis-view .pamis-stats-grid-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.pamis-view .stat-card {
+  background: #1a1a1a;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border-top: 3px solid #ff6600;
+}
+
+.pamis-view .stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(255, 102, 0, 0.2);
+}
+
+.pamis-view .stat-card.purple,
+.pamis-view .stat-card.orange,
+.pamis-view .stat-card.blue {
+  border-top: 3px solid #ff6600;
+}
+
+.pamis-view .stat-card-icon { font-size: 36px; }
+.pamis-view .stat-card-content { flex: 1; }
+
+.pamis-view .stat-card-label {
+  display: block;
+  font-size: 11px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+.pamis-view .stat-card-value {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ff6600;
+}
+
+.pamis-view .stat-card-value.positive { color: #4caf50; }
+.pamis-view .stat-card-value.negative { color: #f44336; }
+
+.pamis-view .stat-card-sub {
+  font-size: 10px;
+  color: #888;
+  display: block;
+  margin-top: 4px;
+}
+
+.pamis-view .pamis-effectiveness-section {
+  background: #0f0f0f;
+  border-radius: 24px;
+  padding: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  border: 1px solid #1f1f1f;
+}
+
+.pamis-view .effectiveness-circle-large {
+  background: #0a0a0a;
+  border: 3px solid #ff6600;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ff6600;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
+}
+
+.pamis-view .effectiveness-circle-percent {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.pamis-view .effectiveness-circle-label {
+  font-size: 10px;
+  opacity: 0.8;
+  margin-top: 5px;
+  color: #aaa;
+}
+
+.pamis-view .effectiveness-circle-bar {
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 102, 0, 0.2);
+  border-radius: 4px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.pamis-view .effectiveness-circle-progress {
+  height: 100%;
+  background: #ff6600;
+  border-radius: 4px;
+}
+
+.pamis-view .effectiveness-stats {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pamis-view .effectiveness-stat {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 20px;
+  border-radius: 16px;
+  background: #1a1a1a;
+  transition: all 0.2s;
+}
+
+.pamis-view .effectiveness-stat:hover {
+  transform: translateX(5px);
+  background: #222;
+}
+
+.pamis-view .effectiveness-stat.delivered { border-left: 4px solid #4caf50; }
+.pamis-view .effectiveness-stat.pending { border-left: 4px solid #ff9800; }
+.pamis-view .effectiveness-stat.returns { border-left: 4px solid #f44336; }
+
+.pamis-view .effectiveness-stat .stat-icon { font-size: 28px; }
+
+.pamis-view .stat-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pamis-view .stat-info .stat-label {
+  font-size: 12px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+.pamis-view .stat-info .stat-number {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.pamis-view .stat-info .stat-percent {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgba(255, 102, 0, 0.15);
+  color: #ff6600;
+}
+
+@media (max-width: 1024px) {
+  .pamis-view .pamis-stats-grid-three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pamis-view .pamis-hero {
+    flex-direction: column;
+  }
+  .pamis-view .hero-divider {
+    width: 80%;
+    height: 1px;
+  }
+  .pamis-view .pamis-stats-grid-three {
+    grid-template-columns: 1fr;
+  }
+  .pamis-view .pamis-effectiveness-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .pamis-view .effectiveness-stat {
+    flex-direction: column;
+    text-align: center;
+  }
+  .pamis-view .stat-info {
+    flex-direction: column;
+    align-items: center;
+  }
+}

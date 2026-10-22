@@ -1,0 +1,48 @@
+.asignacion-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.asignacion-title {
+  font-size: 14px;
+  color: #1a237e;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.asignacion-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f5f7ff 0%, #e8eaf6 100%);
+  border-radius: 10px;
+}
+
+.domiciliario-avatar {
+  font-size: 32px;
+}
+
+.domiciliario-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.domiciliario-label {
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.domiciliario-status {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.domiciliario-status.sin-asignar {
+  color: #f44336;
+}

@@ -1,0 +1,39 @@
+.admin-view { padding: 20px; max-width: 900px; margin: 0 auto; }
+.admin-toggle { display: flex; justify-content: center; gap: 10px; margin-bottom: 24px; }
+.admin-toggle-btn { padding: 10px 24px; border: 2px solid transparent; border-radius: 30px; background: #1a1a1a; color: #888; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+.admin-toggle-btn.active.domis { background: linear-gradient(135deg, #ff6600, #ff8800); color: #fff; border-color: #ff6600; }
+.admin-toggle-btn.active.pamis { background: linear-gradient(135deg, #2196f3, #1976d2); color: #fff; border-color: #2196f3; }
+.admin-header-actions { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
+.admin-header-actions h2 { color: #fff; font-size: 18px; margin: 0; }
+.admin-btn-primary { padding: 10px 20px; background: linear-gradient(135deg, #ff6600, #ff8800); color: #fff; border: none; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; }
+.admin-btn-back { padding: 8px 16px; background: #2a2a2a; color: #ccc; border: none; border-radius: 8px; font-size: 13px; cursor: pointer; }
+.admin-form { background: #1a1a1a; border: 2px solid #ff6600; border-radius: 14px; padding: 20px; margin-bottom: 20px; }
+.admin-form h3 { color: #fff; margin: 0 0 16px 0; font-size: 15px; }
+.admin-input { width: 100%; background: #0f0f0f; border: 1px solid #333; border-radius: 10px; padding: 12px 14px; color: #fff; font-size: 14px; margin-bottom: 12px; box-sizing: border-box; }
+.admin-form-actions { display: flex; gap: 10px; }
+.admin-btn-save { flex: 1; padding: 12px; background: linear-gradient(135deg, #4caf50, #388e3c); color: #fff; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; }
+.admin-btn-cancel { flex: 1; padding: 12px; background: #2a2a2a; color: #ccc; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; }
+.admin-satelites-list, .admin-domiciliarios-list { display: flex; flex-direction: column; gap: 10px; }
+.admin-satelite-card, .admin-domiciliario-card { display: flex; align-items: center; justify-content: space-between; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 16px 20px; }
+.admin-satelite-info { flex: 1; cursor: pointer; display: flex; gap: 16px; align-items: center; }
+.admin-satelite-codigo { color: #ff6600; font-weight: 800; font-size: 16px; min-width: 80px; }
+.admin-satelite-nombre { color: #fff; font-weight: 600; font-size: 14px; }
+.admin-domiciliario-nombre { color: #fff; font-size: 14px; flex: 1; }
+.admin-btn-delete { padding: 8px 12px; background: rgba(244,67,54,0.15); color: #f44336; border: 1px solid rgba(244,67,54,0.3); border-radius: 8px; cursor: pointer; }
+.admin-empty { text-align: center; color: #888; padding: 40px; font-style: italic; }
+.admin-loading { text-align: center; color: #888; padding: 40px; }
+
+.admin-tabs { display: flex; background: #060e1e; border-bottom: 1px solid #0e1e36; margin-bottom: 20px; }
+.admin-tab { flex: 1; padding: 11px 4px; border: none; background: transparent; color: #666; cursor: pointer; font-size: 0.75rem; font-weight: 600; border-bottom: 2px solid transparent; transition: all 0.2s; }
+.admin-tab.active { color: #ff6600; font-weight: 800; border-bottom: 2px solid #ff6600; }
+.admin-tab-content { padding-bottom: 40px; }
+.admin-domiciliario-estado { display: flex; gap: 6px; align-items: center; }
+.btn-estado-sm { width: 30px; height: 30px; border: none; border-radius: 7px; cursor: pointer; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; }
+
+.admin-equipo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.admin-equipo-card { background: #0a1220; border: 1px solid #1a2a4a; border-radius: 12px; padding: 16px; cursor: pointer; transition: all 0.2s; }
+.admin-equipo-card:hover { border-color: #ff6600; background: #0f1e35; }
+.admin-equipo-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #1a2a4a; color: #fff; font-weight: 600; font-size: 14px; }
+.admin-equipo-count { font-size: 12px; color: #ff6600; background: rgba(255, 102, 0, 0.15); padding: 2px 8px; border-radius: 10px; }
+.admin-equipo-body { display: flex; flex-direction: column; gap: 8px; }
+.admin-equipo-more { font-size: 12px; color: #888; font-style: italic; margin-top: 4px; }

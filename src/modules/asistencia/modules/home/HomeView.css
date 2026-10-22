@@ -1,0 +1,14 @@
+.home-view { padding: 40px 20px; max-width: 900px; margin: 0 auto; }
+.home-subtitle { text-align: center; color: #888; font-size: 14px; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; }
+.fuente-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.fuente-card { display: flex; flex-direction: column; align-items: center; padding: 40px 20px; background: #0a0a0a; border: 2px solid; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; text-align: center; }
+.fuente-domis { border-color: #ff6600; }
+.fuente-domis:hover { background: rgba(255,102,0,0.1); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(255,102,0,0.2); }
+.fuente-pamis { border-color: #2196f3; }
+.fuente-pamis:hover { background: rgba(33,150,243,0.1); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(33,150,243,0.2); }
+.fuente-icon { font-size: 64px; margin-bottom: 16px; }
+.fuente-card h2 { font-size: 28px; margin: 0 0 8px 0; letter-spacing: 2px; }
+.fuente-domis h2 { color: #ff6600; }
+.fuente-pamis h2 { color: #2196f3; }
+.fuente-card p { font-size: 12px; color: #888; margin: 0; line-height: 1.5; }
+@media (max-width: 768px) { .fuente-grid { grid-template-columns: 1fr; } }

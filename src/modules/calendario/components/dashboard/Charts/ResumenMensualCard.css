@@ -1,0 +1,175 @@
+.resumen-mensual-compact {
+  background: white;
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.resumen-mensual-compact.domis {
+  border-top-color: #ff6600;
+}
+
+.resumen-mensual-compact.pamis {
+  border-top-color: #2196f3;
+}
+
+.resumen-mensual-compact.general {
+  border-top-color: #d4af37;
+}
+
+.resumen-mensual-compact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.resumen-mensual-compact-header h4 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1a237e;
+  letter-spacing: 0.3px;
+}
+
+.resumen-mensual-compact.domis .resumen-mensual-compact-header h4 {
+  color: #ff6600;
+}
+
+.resumen-mensual-compact.pamis .resumen-mensual-compact-header h4 {
+  color: #2196f3;
+}
+
+.resumen-mensual-compact.general .resumen-mensual-compact-header h4 {
+  color: #b8860b;
+}
+
+.resumen-mensual-compact-mes {
+  background: #f8f9ff;
+  color: #1a237e;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.resumen-mensual-compact-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.resumen-mini-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: #f8f9ff;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.resumen-mini-card:hover {
+  background: #e8eaf6;
+  transform: translateY(-2px);
+}
+
+/* ===== HIGHLIGHT - EFECTIVIDAD ===== */
+.resumen-mini-card.highlight {
+  background: linear-gradient(135deg, #1a237e, #283593);
+}
+
+/* Colores de fondo según la fuente */
+.resumen-mensual-compact.domis .resumen-mini-card.highlight {
+  background: linear-gradient(135deg, #ff6600, #ff8800);
+}
+
+.resumen-mensual-compact.pamis .resumen-mini-card.highlight {
+  background: linear-gradient(135deg, #2196f3, #1976d2);
+}
+
+.resumen-mensual-compact.general .resumen-mini-card.highlight {
+  background: linear-gradient(135deg, #b8860b, #d4af37);
+}
+
+/* Texto blanco dentro de highlight (con !important para que no lo pise lo de arriba) */
+.resumen-mini-card.highlight .resumen-mini-label {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.resumen-mini-card.highlight .resumen-mini-value {
+  color: #ffffff !important;
+}
+
+/* Íconos */
+.resumen-mini-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.resumen-mini-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  flex: 1;
+}
+
+.resumen-mini-label {
+  font-size: 8px;
+  color: #666;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.resumen-mini-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a237e;
+  line-height: 1;
+}
+
+/* Colores de texto según la fuente (solo para cards que NO son highlight) */
+.resumen-mensual-compact.domis .resumen-mini-card:not(.highlight) .resumen-mini-value {
+  color: #ff6600;
+}
+
+.resumen-mensual-compact.pamis .resumen-mini-card:not(.highlight) .resumen-mini-value {
+  color: #2196f3;
+}
+
+.resumen-mensual-compact.general .resumen-mini-card:not(.highlight) .resumen-mini-value {
+  color: #b8860b;
+}
+
+/* Loading */
+.resumen-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.mini-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #e0e0e0;
+  border-top-color: #1a237e;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

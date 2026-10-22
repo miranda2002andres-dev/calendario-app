@@ -1,0 +1,10 @@
+.tendencia-con-resumen {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+.tendencia-con-resumen > * {
+  width: 100%;
+}

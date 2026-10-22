@@ -1,0 +1,276 @@
+/* ========== FALLAS UPLOADER MODAL ========== */
+.fallas-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fallas-modal {
+  background: #1a1a1a;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 720px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border-top: 4px solid;
+  animation: slideUp 0.3s ease;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fallas-modal.domis { border-top-color: #ff6600; }
+.fallas-modal.pamis { border-top-color: #2196f3; }
+
+.fallas-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.fallas-modal-header h3 {
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fallas-modal-close {
+  background: transparent;
+  border: none;
+  color: #888;
+  font-size: 22px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fallas-modal-close:hover {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.fallas-modal-body {
+  padding: 20px 25px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.fallas-modal-field {
+  margin-bottom: 18px;
+}
+
+.fallas-modal-field label {
+  display: block;
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fallas-modal-input,
+.fallas-modal-textarea {
+  width: 100%;
+  background: #0f0f0f;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #fff;
+  font-size: 13px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.fallas-modal-input:focus,
+.fallas-modal-textarea:focus {
+  outline: none;
+  border-color: #555;
+}
+
+.fallas-modal.domis .fallas-modal-input:focus,
+.fallas-modal.domis .fallas-modal-textarea:focus {
+  border-color: #ff6600;
+}
+
+.fallas-modal.pamis .fallas-modal-input:focus,
+.fallas-modal.pamis .fallas-modal-textarea:focus {
+  border-color: #2196f3;
+}
+
+.fallas-modal-textarea {
+  resize: vertical;
+  min-height: 200px;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+/* ✅ NUEVO: Info de fecha (solo lectura) */
+.fallas-modal-fecha-info {
+  background: #0f0f0f;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #ff6600;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Consolas', 'Monaco', monospace;
+  letter-spacing: 1px;
+}
+
+.fallas-modal.pamis .fallas-modal-fecha-info {
+  color: #2196f3;
+}
+
+.fallas-modal-preview {
+  display: flex;
+  gap: 12px;
+  padding: 15px;
+  background: #0f0f0f;
+  border-radius: 12px;
+  margin-top: 10px;
+  border: 1px solid #2a2a2a;
+}
+
+.fallas-preview-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.fallas-preview-label {
+  font-size: 10px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fallas-preview-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.fallas-modal.domis .fallas-preview-value { color: #ff6600; }
+.fallas-modal.pamis .fallas-preview-value { color: #2196f3; }
+
+.fallas-modal-error {
+  background: rgba(244, 67, 54, 0.15);
+  color: #f44336;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-top: 10px;
+  border-left: 3px solid #f44336;
+}
+
+.fallas-modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+  border-top: 1px solid #2a2a2a;
+  gap: 10px;
+}
+
+.fallas-modal-footer-right {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.fallas-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.fallas-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fallas-btn-cancel {
+  background: #2a2a2a;
+  color: #ccc;
+}
+
+.fallas-btn-cancel:hover:not(:disabled) {
+  background: #333;
+  color: #fff;
+}
+
+.fallas-btn-save {
+  color: #fff;
+}
+
+.fallas-btn-save.domis {
+  background: linear-gradient(135deg, #ff6600, #ff8800);
+}
+
+.fallas-btn-save.pamis {
+  background: linear-gradient(135deg, #2196f3, #1976d2);
+}
+
+.fallas-btn-save:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.fallas-btn-danger {
+  background: rgba(244, 67, 54, 0.15);
+  color: #f44336;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.fallas-btn-danger:hover:not(:disabled) {
+  background: rgba(244, 67, 54, 0.25);
+}
+
+@media (max-width: 768px) {
+  .fallas-modal {
+    max-height: 95vh;
+  }
+  .fallas-modal-header,
+  .fallas-modal-body,
+  .fallas-modal-footer {
+    padding: 15px;
+  }
+  .fallas-modal-textarea {
+    min-height: 150px;
+    font-size: 12px;
+  }
+}

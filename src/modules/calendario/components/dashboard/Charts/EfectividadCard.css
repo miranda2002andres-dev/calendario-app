@@ -1,0 +1,96 @@
+.efectividad-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.efectividad-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.efectividad-card.domis {
+  border-top: 4px solid #1a237e;
+}
+
+.efectividad-card.pamis {
+  border-top: 4px solid #2196f3;
+}
+
+/* ===== ESTADÍSTICAS ===== */
+.efectividad-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 12px;
+  border-left: 4px solid;
+  transition: all 0.2s;
+}
+
+.stat-row:hover {
+  transform: translateX(4px);
+}
+
+.stat-row.success {
+  background: #e8f5e9;
+  border-left-color: #4caf50;
+}
+
+.stat-row.warning {
+  background: #fff8e1;
+  border-left-color: #ff9800;
+}
+
+.stat-row.danger {
+  background: #ffebee;
+  border-left-color: #f44336;
+}
+
+.stat-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a237e;
+  text-align: center;
+}
+
+.stat-percent {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-align: center;
+  justify-self: end;
+}
+
+@media (max-width: 768px) {
+  .stat-row {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    text-align: center;
+  }
+  
+  .stat-value,
+  .stat-percent {
+    justify-self: center;
+  }
+}

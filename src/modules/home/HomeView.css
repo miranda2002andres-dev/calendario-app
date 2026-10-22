@@ -1,0 +1,102 @@
+.home-view {
+  padding: 40px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.home-subtitle {
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.racol-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.racol-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #0a0a0a;
+  border: 2px solid #1a237e;
+  border-radius: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.racol-card:hover {
+  border-color: #ff6600;
+  background: #0f1e35;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 102, 0, 0.15);
+}
+
+.racol-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  border: 2px solid #ff6600;
+  border-radius: 14px;
+  flex-shrink: 0;
+  padding: 8px;
+}
+
+.racol-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.racol-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.racol-info h3 {
+  color: #fff;
+  font-size: 18px;
+  margin: 0 0 6px 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.racol-ciudad {
+  color: #888;
+  font-size: 13px;
+  margin: 0;
+}
+
+.racol-arrow {
+  font-size: 32px;
+  color: #ff6600;
+  font-weight: 300;
+  flex-shrink: 0;
+}
+
+.racol-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+  color: #888;
+  font-size: 13px;
+}
+
+.counter-dot {
+  width: 8px;
+  height: 8px;
+  background: #4caf50;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #4caf50;
+}

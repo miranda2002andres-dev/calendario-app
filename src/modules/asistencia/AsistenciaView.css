@@ -1,0 +1,7 @@
+.asistencia-container { min-height: 100vh; background: #000; padding: 20px; }
+.asistencia-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; background: linear-gradient(90deg, #000 0%, #1a237e 100%); padding: 14px 20px; border-radius: 12px; border-bottom: 2px solid #ff6600; }
+.asistencia-back-btn { background: #ff6600; border: none; color: #fff; font-size: 20px; width: 44px; height: 44px; border-radius: 10px; cursor: pointer; font-weight: 900; flex-shrink: 0; }
+.asistencia-back-btn:hover { background: #ff8800; }
+.asistencia-title { color: #fff; font-size: 18px; margin: 0; flex: 1; text-transform: uppercase; letter-spacing: 1px; }
+.asistencia-admin-btn { background: #1a237e; border: 2px solid #ff6600; color: #ff6600; font-size: 20px; width: 44px; height: 44px; border-radius: 10px; cursor: pointer; font-weight: 900; flex-shrink: 0; }
+.asistencia-admin-btn:hover { background: #ff6600; color: #fff; }

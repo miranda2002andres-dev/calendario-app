@@ -1,0 +1,131 @@
+/* ========== KPI TABLA UNIFICADA ========== */
+.kpi-container {
+  width: 100%;
+}
+
+.kpi-table {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.kpi-table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  background: linear-gradient(135deg, #1a237e, #283593);
+  padding: 0;
+}
+
+.kpi-table-col-header {
+  padding: 14px 12px;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.kpi-table-col-header.domis {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.kpi-table-col-header.pamis {
+  background: rgba(33, 150, 243, 0.15);
+}
+
+.kpi-table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  border-bottom: 1px solid #e8eaf6;
+  transition: background 0.2s;
+}
+
+.kpi-table-row:last-child {
+  border-bottom: none;
+}
+
+.kpi-table-row:hover {
+  background: #f8f9ff;
+}
+
+.kpi-table-row.highlight {
+  background: linear-gradient(135deg, #e8eaf6, #f8f9ff);
+  font-weight: 700;
+}
+
+.kpi-table-label {
+  padding: 14px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1a237e;
+  font-size: 13px;
+  font-weight: 600;
+  border-right: 1px solid #e8eaf6;
+}
+
+.label-icon {
+  font-size: 18px;
+}
+
+.label-text {
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.kpi-table-value {
+  padding: 14px 12px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kpi-table-value.domis {
+  color: #1a237e;
+  background: rgba(26, 35, 126, 0.02);
+}
+
+.kpi-table-value.pamis {
+  color: #1565c0;
+  background: rgba(33, 150, 243, 0.03);
+}
+
+.kpi-table-value.positive {
+  color: #4caf50;
+}
+
+.kpi-table-value.negative {
+  color: #f44336;
+}
+
+.kpi-table-value.pamis-empty {
+  color: #ccc;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .kpi-table-header,
+  .kpi-table-row {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+  
+  .kpi-table-label {
+    font-size: 11px;
+    padding: 12px 10px;
+  }
+  
+  .kpi-table-value {
+    font-size: 16px;
+    padding: 12px 8px;
+  }
+  
+  .label-icon {
+    font-size: 14px;
+  }
+}

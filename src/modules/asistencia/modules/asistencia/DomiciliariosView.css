@@ -1,0 +1,162 @@
+.domiciliarios-view {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.domiciliarios-loading {
+  text-align: center;
+  color: #888;
+  padding: 60px;
+}
+
+.domiciliarios-fecha {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  background: #1a1a1a;
+  padding: 12px 20px;
+  border-radius: 10px;
+}
+
+.domiciliarios-fecha label {
+  color: #ccc;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.domiciliarios-fecha input {
+  background: #0f0f0f;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.domiciliarios-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.stat-box {
+  background: #0a0a0a;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.stat-label {
+  display: block;
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.domiciliarios-empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: #0a0a0a;
+  border: 2px dashed #333;
+  border-radius: 16px;
+}
+
+.domiciliarios-empty p {
+  color: #888;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.domiciliarios-empty-sub {
+  font-size: 13px;
+  color: #666;
+}
+
+.domiciliarios-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.domiciliario-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0a0a0a;
+  border: 1px solid #1f1f1f;
+  border-radius: 12px;
+  padding: 16px 20px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.domiciliario-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.domiciliario-nombre {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.domiciliario-estado {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.domiciliario-hora {
+  color: #888;
+  font-weight: 500;
+}
+
+.domiciliario-botones {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-estado {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 900;
+  transition: all 0.2s;
+}
+
+.btn-estado:hover {
+  transform: scale(1.1);
+}
+
+.btn-estado.active {
+  box-shadow: 0 0 12px currentColor;
+}
+
+@media (max-width: 768px) {
+  .domiciliarios-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .domiciliario-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .domiciliario-botones {
+    justify-content: center;
+  }
+}

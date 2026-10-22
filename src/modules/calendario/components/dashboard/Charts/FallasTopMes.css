@@ -1,0 +1,187 @@
+/* ========== FALLAS TOP MES ========== */
+.fallas-top-mes-card {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-top: 3px solid;
+  box-sizing: border-box;
+}
+
+.fallas-top-mes-card.domis { border-top-color: #ff6600; }
+.fallas-top-mes-card.pamis { border-top-color: #2196f3; }
+
+.fallas-top-mes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.fallas-top-mes-header h3 {
+  color: #fff;
+  font-size: 13px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fallas-top-mes-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: #2a2a2a;
+  color: #ccc;
+}
+
+.fallas-top-mes-card.domis .fallas-top-mes-badge { color: #ff6600; }
+.fallas-top-mes-card.pamis .fallas-top-mes-badge { color: #2196f3; }
+
+.fallas-top-mes-lista {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 24px;
+}
+
+.fallas-top-mes-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.fallas-top-mes-posicion {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #2a2a2a;
+  color: #888;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.fallas-top-mes-row:nth-child(1) .fallas-top-mes-posicion {
+  background: linear-gradient(135deg, #ffd700, #ffb300);
+  color: #1a1a1a;
+}
+.fallas-top-mes-row:nth-child(2) .fallas-top-mes-posicion {
+  background: linear-gradient(135deg, #c0c0c0, #9e9e9e);
+  color: #1a1a1a;
+}
+.fallas-top-mes-row:nth-child(3) .fallas-top-mes-posicion {
+  background: linear-gradient(135deg, #cd7f32, #a05a1f);
+  color: #fff;
+}
+
+.fallas-top-mes-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.fallas-top-mes-nombre {
+  font-size: 11px;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fallas-top-mes-barra-container {
+  width: 100%;
+  height: 8px;
+  background: #2a2a2a;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.fallas-top-mes-barra {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.fallas-top-mes-card.domis .fallas-top-mes-barra {
+  background: linear-gradient(90deg, #ff6600, #ffaa55);
+}
+.fallas-top-mes-card.pamis .fallas-top-mes-barra {
+  background: linear-gradient(90deg, #2196f3, #64b5f6);
+}
+
+.fallas-top-mes-dias {
+  font-size: 10px;
+  color: #888;
+  font-weight: 500;
+}
+
+.fallas-top-mes-cantidad {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  min-width: 35px;
+  text-align: right;
+  margin-top: 2px;
+}
+
+.fallas-top-mes-card.domis .fallas-top-mes-cantidad { color: #ff6600; }
+.fallas-top-mes-card.pamis .fallas-top-mes-cantidad { color: #2196f3; }
+
+.fallas-top-mes-resumen {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.fallas-top-mes-resumen-item {
+  text-align: center;
+  padding: 6px 4px;
+  background: #0f0f0f;
+  border-radius: 10px;
+}
+
+.fallas-top-mes-resumen-label {
+  display: block;
+  font-size: 9px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+.fallas-top-mes-resumen-valor {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.fallas-top-mes-card.domis .fallas-top-mes-resumen-valor { color: #ff6600; }
+.fallas-top-mes-card.pamis .fallas-top-mes-resumen-valor { color: #2196f3; }
+
+.fallas-top-mes-empty {
+  padding: 40px 0;
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .fallas-top-mes-lista {
+    grid-template-columns: 1fr;
+  }
+  .fallas-top-mes-resumen {
+    grid-template-columns: 1fr;
+  }
+}

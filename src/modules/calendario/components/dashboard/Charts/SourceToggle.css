@@ -1,0 +1,38 @@
+.source-toggle {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.source-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 26px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.source-btn:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.source-btn.active {
+  background: white;
+  color: #1a237e;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .source-btn {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+}

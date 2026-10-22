@@ -1,0 +1,102 @@
+.gauge-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.gauge-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Borde superior según el tipo */
+.gauge-card.domis {
+  border-top: 4px solid #1a237e;
+}
+
+.gauge-card.pamis {
+  border-top: 4px solid #2196f3;
+}
+
+.gauge-card.general {
+  border-top: 4px solid #d4af37;
+}
+
+.gauge-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a237e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.gauge-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  padding-bottom: 50px;
+}
+
+.gauge-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Número grande DEBAJO del gauge */
+.gauge-value-display {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding-top: 8px;
+}
+
+.gauge-value-big {
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.gauge-meta-info {
+  font-size: 12px;
+  color: #666;
+  font-weight: 600;
+  background: #f8f9ff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+/* Meta info dorada para General */
+.gauge-card.general .gauge-meta-info {
+  background: #fdf3d3;
+  color: #b8860b;
+}
+
+.gauge-card.general .gauge-title {
+  color: #b8860b;
+}
+
+@media (max-width: 768px) {
+  .gauge-wrapper {
+    max-width: 240px;
+  }
+  
+  .gauge-title {
+    font-size: 12px;
+  }
+  
+  .gauge-value-big {
+    font-size: 32px;
+  }
+}

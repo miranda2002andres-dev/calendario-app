@@ -1,0 +1,74 @@
+/* ========== ANÁLISIS DE FALLAS VIEW ========== */
+.analisis-fallas-view {
+  padding: 0;
+}
+
+.fallas-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.fallas-toggle-btn {
+  padding: 10px 24px;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  background: #1a1a1a;
+  color: #888;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fallas-toggle-btn:hover {
+  background: #222;
+  color: #fff;
+}
+
+.fallas-toggle-btn.active {
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.fallas-toggle-btn.active.domis {
+  background: linear-gradient(135deg, #ff6600, #ff8800);
+  border-color: #ff6600;
+}
+
+.fallas-toggle-btn.active.pamis {
+  background: linear-gradient(135deg, #2196f3, #1976d2);
+  border-color: #2196f3;
+}
+
+.fallas-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.fallas-top-mes-container {
+  margin-bottom: 20px;
+}
+
+.fallas-tabla-container {
+  margin-bottom: 20px;
+}
+
+.analisis-fallas-loading {
+  padding: 60px 20px;
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .fallas-charts-grid {
+    grid-template-columns: 1fr;
+  }
+}

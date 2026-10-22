@@ -1,0 +1,109 @@
+.tendencia-mini-card {
+  background: white;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+  border-top: 4px solid;
+}
+
+.tendencia-mini-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.tendencia-mini-card.domis {
+  border-top-color: #ff6600;
+}
+
+.tendencia-mini-card.pamis {
+  border-top-color: #2196f3;
+}
+
+.tendencia-mini-card.general {
+  border-top-color: #d4af37;
+}
+
+.tendencia-mini-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tendencia-mini-header h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a237e;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tendencia-mini-card.general .tendencia-mini-header h4 {
+  color: #b8860b;
+}
+
+.tendencia-mini-promedio {
+  font-size: 11px;
+  font-weight: 700;
+  background: #f8f9ff;
+  color: #1a237e;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.tendencia-mini-card.domis .tendencia-mini-promedio {
+  background: #fff5eb;
+  color: #ff6600;
+}
+
+.tendencia-mini-card.pamis .tendencia-mini-promedio {
+  background: #eef7ff;
+  color: #2196f3;
+}
+
+.tendencia-mini-card.general .tendencia-mini-promedio {
+  background: #fdf9ed;
+  color: #b8860b;
+}
+
+/* Contenedor de la gráfica con altura fija estética */
+.tendencia-mini-chart-wrapper {
+  width: 100%;
+  height: 220px; /* ✅ Altura fija estética, no se estira */
+  position: relative;
+}
+
+/* ✅ SOLO en Reportes: la gráfica se centra verticalmente dentro de la tarjeta */
+.reportes-view .tendencia-mini-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.reportes-view .tendencia-mini-chart-wrapper {
+  flex: 1;
+  height: auto; /* Quitamos la altura fija dentro de reportes */
+  min-height: 220px;
+  display: flex;
+  align-items: center; /* ✅ Centra verticalmente la gráfica */
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .tendencia-mini-card {
+    padding: 12px;
+  }
+  
+  .tendencia-mini-header h4 {
+    font-size: 11px;
+  }
+  
+  .tendencia-mini-promedio {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+}

@@ -1,0 +1,137 @@
+.tendencia-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.tendencia-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.tendencia-title {
+  font-size: 15px;
+  color: #1a237e;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.meta-badge {
+  background: #1a237e;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tendencia-chart-wrapper {
+  width: 100%;
+  height: 280px;
+  flex-shrink: 0;
+}
+
+/* ✅ Contenedor de la tarjeta única */
+.tendencia-stats-single {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.tendencia-stats-single .stat-block {
+  max-width: 500px;
+  width: 100%;
+}
+
+.stat-block {
+  background: #f8f9ff;
+  border-radius: 12px;
+  padding: 15px;
+  border-left: 4px solid;
+  transition: all 0.3s ease;
+}
+
+.stat-block.domis {
+  border-left-color: #ff6600;
+  background: #fff5eb;
+}
+
+.stat-block.pamis {
+  border-left-color: #2196f3;
+  background: #eef7ff;
+}
+
+.stat-block.general {
+  border-left-color: #d4af37;
+  background: #fdf9ed;
+}
+
+.stat-block-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a237e;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.stat-block.general .stat-block-title {
+  color: #b8860b;
+}
+
+.stat-block-items {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+}
+
+.stat-item .stat-label {
+  display: block;
+  font-size: 10px;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.stat-item .stat-value {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a237e;
+}
+
+.stat-block.general .stat-item .stat-value {
+  color: #b8860b;
+}
+
+.stat-item .stat-value.success {
+  color: #4caf50;
+}
+
+@media (max-width: 1024px) {
+  .tendencia-chart-wrapper {
+    height: 240px;
+  }
+}

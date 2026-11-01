@@ -47,7 +47,7 @@ const formatLongDate = (date) => {
   return `${dias[date.getDay()]} ${date.getDate()} de ${meses[date.getMonth()]} ${date.getFullYear()}`;
 };
 
-const CalendarioView = ({ onBack }) => {
+const EfectividadView = ({ onBack }) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [showEditor, setShowEditor] = useState(false);
   const [showConfirmDelete, setShowConfirmDelete] = useState(false);
@@ -502,4 +502,4 @@ const CalendarioView = ({ onBack }) => {
   );
 };
 
-export default CalendarioView;
+export default EfectividadView;

@@ -1,19 +1,23 @@
 import React from 'react';
 import './AdminView.css';
 
-const AdminView = ({ onBack }) => {
+const AdminView = ({ 
+  onBack, 
+  onGoToUsuarios, 
+  onGoToAgencias, 
+  onGoToZonas, 
+  onGoToAsistencia, 
+  onGoToEfectividad, 
+  onGoToReportes 
+}) => {
   const modulos = [
-    { id: 'usuarios', titulo: 'USUARIOS', subtitulo: 'Crear y asignar permisos', color: 'naranja' },
-    { id: 'agencias', titulo: 'AGENCIAS', subtitulo: 'Gestionar agencias', color: 'azul' },
-    { id: 'zonas', titulo: 'ZONAS', subtitulo: 'Gestionar zonas', color: 'morado' },
-    { id: 'asistencia', titulo: 'ASISTENCIA', subtitulo: 'Ver asistencias', color: 'verde' },
-    { id: 'efectividad', titulo: 'EFECTIVIDAD', subtitulo: 'Ver efectividad', color: 'amarillo' },
-    { id: 'reportes', titulo: 'REPORTES', subtitulo: 'Generar reportes', color: 'gris' },
+    { id: 'usuarios', titulo: 'USUARIOS', subtitulo: 'Crear y asignar permisos', color: 'naranja', action: onGoToUsuarios },
+    { id: 'agencias', titulo: 'AGENCIAS', subtitulo: 'Gestionar agencias', color: 'azul', action: onGoToAgencias },
+    { id: 'zonas', titulo: 'ZONAS', subtitulo: 'Gestionar zonas', color: 'morado', action: onGoToZonas },
+    { id: 'asistencia', titulo: 'ASISTENCIA', subtitulo: 'Ver asistencias', color: 'verde', action: onGoToAsistencia },
+    { id: 'efectividad', titulo: 'EFECTIVIDAD', subtitulo: 'Ver efectividad', color: 'amarillo', action: onGoToEfectividad },
+    { id: 'reportes', titulo: 'REPORTES', subtitulo: 'Generar reportes', color: 'gris', action: onGoToReportes },
   ];
-
-  const handleClick = (modulo) => {
-    console.log('Módulo seleccionado:', modulo.id);
-  };
 
   return (
     <div className="admin-view">
@@ -30,7 +34,7 @@ const AdminView = ({ onBack }) => {
           <button
             key={modulo.id}
             className={`admin-modulo-card admin-modulo-${modulo.color}`}
-            onClick={() => handleClick(modulo)}
+            onClick={modulo.action}
           >
             <div className="admin-modulo-info">
               <span className="admin-modulo-titulo">{modulo.titulo}</span>

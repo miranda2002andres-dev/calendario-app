@@ -5,3 +5,47 @@
 .asistencia-title { color: #fff; font-size: 18px; margin: 0; flex: 1; text-transform: uppercase; letter-spacing: 1px; }
 .asistencia-admin-btn { background: #1a237e; border: 2px solid #ff6600; color: #ff6600; font-size: 20px; width: 44px; height: 44px; border-radius: 10px; cursor: pointer; font-weight: 900; flex-shrink: 0; }
 .asistencia-admin-btn:hover { background: #ff6600; color: #fff; }
+
+/* Estilos para la nueva barra de navegación superior */
+.asistencia-nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.asistencia-nav-btn {
+  background-color: #2a2a2a;
+  color: #aaa;
+  border: 1px solid #333;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.asistencia-nav-btn:hover {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+/* Estilo para el botón activo (DOMIS o PAMIS) */
+.asistencia-nav-btn.active {
+  background-color: #f97316; /* Naranja de tu paleta */
+  color: #fff;
+  border-color: #f97316;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+/* Estilo específico para cuando el botón de Admin está activo */
+.asistencia-nav-btn:last-child.active {
+  background-color: #3b82f6; /* Azul para diferenciar el admin */
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}

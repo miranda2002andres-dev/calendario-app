@@ -1,167 +1,21 @@
-import { db } from '../config/firebase';
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  setDoc,
-  addDoc,
-  query,
-  where,
-  deleteDoc,
-  orderBy,
-  Timestamp,
-  serverTimestamp
-} from "firebase/firestore";
-
-const COLECCION_SATELITES = 'satelites';
-const COLECCION_DOMICILIARIOS = 'domiciliarios';
-const COLECCION_ASISTENCIA = 'asistencia';
+import { collection, getDocs, addDoc, deleteDoc, doc, getDoc, setDoc, query, where } from "firebase/firestore";
+import { db } from '../../../config/firebase';
 
 export const asistenciaService = {
-  // ========== SATÉLITES ==========
-  async getSatelites(fuente) {
-    try {
-      // ✅ Sin orderBy para evitar índice compuesto
-      const q = query(
-        collection(db, COLECCION_SATELITES),
-        where("fuente", "==", fuente)
-      );
-      const querySnapshot = await getDocs(q);
-      const data = [];
-      querySnapshot.forEach((doc) => {
-        data.push({ id: doc.id, ...doc.data() });
-      });
-      // Ordenar en JavaScript
-      data.sort((a, b) => (a.codigo || '').localeCompare(b.codigo || ''));
-      return data;
-    } catch (error) {
-      console.error('Error getting satelites:', error);
-      return [];
-    }
+  getSatelites: async (fuente) => {
+    try { const q = query(collection(db, "satelites"), where("fuente", "==", fuente)); const snapshot = await getDocs(q); return snapshot.docs.map(d => ({ id: d.id, ...d.data() })); } catch (e) { return []; }
   },
-
-  async crearSatelite(fuente, codigo, nombre, color) {
-    try {
-      const docRef = await addDoc(collection(db, COLECCION_SATELITES), {
-        fuente,
-        codigo,
-        nombre,
-        color: color || '#ff6600',
-        createdAt: serverTimestamp(),
-      });
-      return { id: docRef.id, fuente, codigo, nombre, color };
-    } catch (error) {
-      console.error('Error creating satelite:', error);
-      throw error;
-    }
+  crearSatelite: async (fuente, codigo, nombre) => { await addDoc(collection(db, "satelites"), { fuente, codigo, nombre }); },
+  eliminarSatelite: async (id) => { await deleteDoc(doc(db, "satelites", id)); },
+  getDomiciliarios: async (sateliteId) => {
+    try { const q = query(collection(db, "domiciliarios"), where("sateliteId", "==", sateliteId)); const snapshot = await getDocs(q); return snapshot.docs.map(d => ({ id: d.id, ...d.data() })); } catch (e) { return []; }
   },
-
-  async eliminarSatelite(sateliteId) {
-    try {
-      const q = query(
-        collection(db, COLECCION_DOMICILIARIOS),
-        where("sateliteId", "==", sateliteId)
-      );
-      const querySnapshot = await getDocs(q);
-      const deletePromises = querySnapshot.docs.map((doc) => deleteDoc(doc.ref));
-      await Promise.all(deletePromises);
-      await deleteDoc(doc(db, COLECCION_SATELITES, sateliteId));
-      return true;
-    } catch (error) {
-      console.error('Error deleting satelite:', error);
-      throw error;
-    }
-  },
-
-  // ========== DOMICILIARIOS ==========
-  async getDomiciliarios(sateliteId) {
-    try {
-      // ✅ Sin orderBy para evitar índice compuesto
-      const q = query(
-        collection(db, COLECCION_DOMICILIARIOS),
-        where("sateliteId", "==", sateliteId)
-      );
-      const querySnapshot = await getDocs(q);
-      const data = [];
-      querySnapshot.forEach((doc) => {
-        data.push({ id: doc.id, ...doc.data() });
-      });
-      data.sort((a, b) => (a.nombre || '').localeCompare(b.nombre || ''));
-      return data;
-    } catch (error) {
-      console.error('Error getting domiciliarios:', error);
-      return [];
-    }
-  },
-
-  async crearDomiciliario(sateliteId, nombre) {
-    try {
-      const docRef = await addDoc(collection(db, COLECCION_DOMICILIARIOS), {
-        sateliteId,
-        nombre,
-        createdAt: serverTimestamp(),
-      });
-      return { id: docRef.id, sateliteId, nombre };
-    } catch (error) {
-      console.error('Error creating domiciliario:', error);
-      throw error;
-    }
-  },
-
-  async eliminarDomiciliario(domiciliarioId) {
-    try {
-      await deleteDoc(doc(db, COLECCION_DOMICILIARIOS, domiciliarioId));
-      return true;
-    } catch (error) {
-      console.error('Error deleting domiciliario:', error);
-      throw error;
-    }
-  },
-
-  // ========== ASISTENCIA ==========
-  async getAsistencia(fecha) {
-    try {
-      const docRef = doc(db, COLECCION_ASISTENCIA, fecha);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        return docSnap.data();
-      }
-      return {};
-    } catch (error) {
-      console.error('Error getting asistencia:', error);
-      return {};
-    }
-  },
-
-  async guardarAsistencia(fecha, data) {
-    try {
-      const docRef = doc(db, COLECCION_ASISTENCIA, fecha);
-      await setDoc(docRef, {
-        ...data,
-        updatedAt: serverTimestamp(),
-      }, { merge: true });
-      return true;
-    } catch (error) {
-      console.error('Error saving asistencia:', error);
-      throw error;
-    }
-  },
-
-  async setEstadoAsistencia(fecha, domiciliarioId, estado) {
-    try {
-      const docRef = doc(db, COLECCION_ASISTENCIA, fecha);
-      await setDoc(docRef, {
-        [domiciliarioId]: {
-          estado,
-          hora: new Date().toLocaleTimeString('es-CO', { hour: '2-digit', minute: '2-digit' }),
-        },
-        updatedAt: serverTimestamp(),
-      }, { merge: true });
-      return true;
-    } catch (error) {
-      console.error('Error setting estado:', error);
-      throw error;
-    }
-  },
+  crearDomiciliario: async (sateliteId, nombre) => { await addDoc(collection(db, "domiciliarios"), { sateliteId, nombre }); },
+  eliminarDomiciliario: async (id) => { await deleteDoc(doc(db, "domiciliarios", id)); },
+  getAsistencia: async (fecha) => { const docRef = doc(db, "asistencia", fecha); const docSnap = await getDoc(docRef); return docSnap.exists() ? docSnap.data() : {}; },
+  setEstadoAsistencia: async (fecha, domId, estado) => { const docRef = doc(db, "asistencia", fecha); const docSnap = await getDoc(docRef); const data = docSnap.exists() ? docSnap.data() : {}; const hora = new Date().toLocaleTimeString('es-CO', { hour: '2-digit', minute: '2-digit' }); await setDoc(docRef, { ...data, [domId]: { estado, hora } }, { merge: true }); },
+  getNovedades: async (fecha) => { const docRef = doc(db, "novedades", fecha); const docSnap = await getDoc(docRef); return docSnap.exists() ? docSnap.data().lista || [] : []; },
+  crearNovedad: async (fecha, novedad) => { const docRef = doc(db, "novedades", fecha); const docSnap = await getDoc(docRef); const lista = docSnap.exists() ? docSnap.data().lista || [] : []; await setDoc(docRef, { lista: [...lista, novedad] }, { merge: true }); },
+  getConfig: async () => { const docRef = doc(db, "configuracion", "general"); const docSnap = await getDoc(docRef); return docSnap.exists() ? docSnap.data() : { pinAdmin: "1234" }; },
+  setConfig: async (config) => { await setDoc(doc(db, "configuracion", "general"), config, { merge: true }); }
 };
